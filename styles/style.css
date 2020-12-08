@@ -1,5 +1,7 @@
-body{
-    width: 100%;
-    height: 100%;
-    background-image: url("Beach_backdrop.gif");
+body {
+    background-image:url('../images/beachBackdrop.gif');
+    background-size:100%;
+    background-attachment: fixed;
+    height:100%;
+    width:100%;
 }
