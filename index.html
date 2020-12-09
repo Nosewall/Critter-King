@@ -4,11 +4,24 @@
         <meta charset="utf-8"></meta>
         <link rel="stylesheet" href="styles/style.css" defer></link>
         <script src="scripts/script.js" defer></script>
+        <audio src="sounds/beachSound.wav" style="display:none;" autoplay="autoplay" loop controls="false"> </audio>
 
     </head>
 
-    <body>
-        <audio src="sounds/beachSound.wav" style="display:none;" autoplay="autoplay" loop controls="false"> </audio>
-        
+    <body onLoad="checkForSaves()">
+        <div class="event" id="eventOne">
+            <div class=eventOne>
+                <p>This is event 1</p>
+                <input type="button" class="close" value="I see" onclick="closeEvent('eventOne'), generateSave()">
+            </div>
+        </div>
+
+        <main>
+                <button onclick="incrementCrab()">Collect a crab</button>
+                <label id="crabCount">0</label>
+        </main>
+        <input type="button" onclick="clearData()" value="Clear all local data">
+        </footer>
+
     </body>
 </html>
