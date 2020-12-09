@@ -1,27 +1,43 @@
 <html lang="en">
-    <head>
-        <title>Critter King</title>
-        <meta charset="utf-8"></meta>
-        <link rel="stylesheet" href="styles/style.css" defer></link>
-        <script src="scripts/script.js" defer></script>
-        <audio src="sounds/beachSound.wav" style="display:none;" autoplay="autoplay" loop controls="false"> </audio>
 
-    </head>
+<head>
+    <title>Critter King</title>
+    <meta charset="utf-8">
+    </meta>
+    <link rel="stylesheet" href="styles/style.css" defer>
+    </link>
+    <script src="scripts/script.js" defer></script>
+    <audio src="sounds/beachSound.wav" style="display:none;" autoplay="autoplay" loop controls="false"> </audio>
 
-    <body onLoad="checkForSaves()">
-        <div class="event" id="eventOne">
-            <div class=eventOne>
-                <p>This is event 1</p>
-                <input type="button" class="close" value="I see" onclick="closeEvent('eventOne'), generateSave()">
-            </div>
-        </div>
+</head>
 
-        <main>
-                <button onclick="incrementCrab()">Collect a crab</button>
-                <label id="crabCount">0</label>
-        </main>
+<body onLoad="checkForSaves()">
+    <main>
+        <button onclick="incrementCrab()">Collect a crab</button>
+        <label id="crabCount">0</label>
+    </main>
+
+    <div class=optionsButton>
+        <button onclick="openOptions()">Options</button>
+    </div>
+
+    <footer>
         <input type="button" onclick="clearData()" value="Clear all local data">
-        </footer>
+    </footer>
 
-    </body>
+    <div class="event" id="eventOne">
+        <div class=eventOne>
+            <p>This is event 1</p>
+            <input type="button" class="close" value="I see" onclick="closeEvent('eventOne'), generateSave()">
+        </div>
+    </div>
+
+    <div class="event" id="options">
+        <div class="Options">
+            <input type="button" onclick="muteSound()" value="Toggle Sound">
+        </div>
+    </div>
+
+</body>
+
 </html>
