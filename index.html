@@ -6,12 +6,18 @@
     </meta>
     <link rel="stylesheet" href="styles/style.css" defer>
     </link>
-    <script src="scripts/script.js" defer></script>
-    <audio src="sounds/beachSound.wav" style="display:none;" autoplay="autoplay" loop controls="false"> </audio>
+    <script src="scripts/saveData.js" defer></script>
+    <script src="scripts/dataInterface.js" defer></script>
+    <script src="scripts/eventHandler.js" defer></script>
+    <script src="scripts/gameLogic.js" defer></script>
+    <audio src="sounds/beachSound.wav" style="display:none;" autoplay="autoplay" loop controls="false" id="sound"
+        volume="1"> </audio>
 
 </head>
 
-<body onLoad="checkForSaves()">
+<body onLoad="initGame()">
+
+
     <main>
         <button onclick="incrementCrab()">Collect a crab</button>
         <label id="crabCount">0</label>
@@ -21,9 +27,27 @@
         <button onclick="openOptions()">Options</button>
     </div>
 
-    <footer>
-        <input type="button" onclick="clearData()" value="Clear all local data">
-    </footer>
+
+
+
+
+
+
+
+
+
+    <div class="event" id="options">
+        <div class="Options">
+            <label></label>
+            <input type="range" id="volumeSlider" min="0" max="10" oninput="changeVolume(this.value)">
+            <input type="button" onclick="showClearOption()" value="Clear data and restart game">
+            <input type="button" onclick="closeEvent('options')" value="Close Options">
+            <input type="button" onclick="resetGame()" value="I know what I'm doing..." class="clearOptions">
+        </div>
+    </div>
+
+
+
 
     <div class="event" id="eventOne">
         <div class=eventOne>
@@ -32,11 +56,14 @@
         </div>
     </div>
 
-    <div class="event" id="options">
-        <div class="Options">
-            <input type="button" onclick="muteSound()" value="Toggle Sound">
-        </div>
-    </div>
+
+
+
+
+
+
+
+
 
 </body>
 
