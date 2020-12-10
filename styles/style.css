@@ -35,3 +35,17 @@ body {
  footer{
      text-align: bottom;
  }
+
+.options{
+    margin: 10% auto;
+    width: 50%;
+    
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.clearOptions{
+    display: none;
+}
