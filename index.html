@@ -18,43 +18,110 @@
 <body onLoad="initGame()">
 
 
-    <main>
-        <button onclick="incrementCrab()">Collect a crab</button>
-        <label id="crabCount">0</label>
-    </main>
+    <button onclick="incrementCrab()">Collect a crab</button>
+    <label id="crabCount">0</label>
 
     <div class=optionsButton>
         <button onclick="openOptions()">Options</button>
     </div>
 
+    <div class="event" id="intro1">
+        <div class="intro">
+            <img src="images/Intro1.png">
+            <p>
+                You've worked so, so hard.
+                You were the top of your class in school. People have always envied your drive and willpower. They said
+                you were destined for great things. So why? Why do you still have this hole in your heart?
+                You're on a beach by your family home, where you grew up. You're spending a lot of time here lately.
+                Thinking about that hole inside you. Trying to problem solve your way to happiness. Nothing. It's all
+                just more weight. It's all just more work.
+                Today is different. You wont take responsibility again. You can't take any more responsibility. It's all
+                so heavy. Life is so heavy. You look up at the vast sky, and it's emptiness is reflected inside of you.
+                'Please, if there's anybody out there. Help me. I don't know how to fill this void'
+
+            </p>
+            <input type="button" onclick="intro2()" value=".....">
+        </div>
+    </div>
+
+    <div class="event" id="intro2">
+        <div class="intro">
+            <img src="images/Intro2.png">
+            <p>
+                'OW!'
+                You're jolted out of your daze by a sharp pain in your arm. it looks like sand crab crawled underneath
+                you while you were sky-gazing. Just what you needed.
+            </p>
+            <input type="button" onclick="intro3()" value="Swat the pest away and return to your brooding in peace">
+        </div>
+    </div>
+
+    <div class="event" id="intro3">
+        <div class="intro">
+            <img src="images/Intro4.png" alt="">
+            <p>
+                You move to flick the creature towards the ocean and get back to the problems of your heart. But... You
+                hesitate. He scuttles towards you again, and this time you don't flinch. Those elegant legs, the
+                perfect, purposeful shuffle. The light crackling of his crabdomen dragging against the tiny pieces of
+                crystalized sand.
+            </p>
+            <input type="button" onclick="intro4()" value="And then it happens">
+        </div>
+    </div>
+
+    <div class="event" id="intro4">
+        <div class="intro">
+            <img src="images/Intro5.png" alt="">
+            <p>
+                Those eyes... In those eyes, you see the reflection of the whole universe. You see your life, every
+                success, every heartbreak, every day that the bottomless black pit swalowed you deeper and deeper.
+                You're there now, falling and falling, the world a mere blip miles above you, endlessly drowning.
+                A claw.
+                A breath of fresh air.
+                Time begins again.
+
+            </p>
+            <input type="button" onclick="intro5()" value="...">
+        </div>
+    </div>
+
+    <div class="event" id="intro5">
+        <div class="intro">
+            <img src="images/Intro6.png" alt="">
+            <p>
+                The sun is shining. You feel it's warmth on your skin.
+                You feel. You feel more than you remembered you knew how to feel.
+                The crab scurries back towards the ocean.
+                Your eyes are dry. How long have you been crying?
+                ...
+                ..."Thank you....."
 
 
-
-
-
-
-
+            </p>
+            <input type="button" onclick="closeEvent('intro5')" value="You know what you must do...">
+        </div>
+    </div>
 
 
     <div class="event" id="options">
         <div class="Options">
             <label></label>
             <input type="range" id="volumeSlider" min="0" max="10" oninput="changeVolume(this.value)">
-            <input type="button" onclick="showClearOption()" value="Clear data and restart game">
+            <input type="button" onclick="showClearOptions()" value="Clear data and restart game">
             <input type="button" onclick="closeEvent('options')" value="Close Options">
-            <input type="button" onclick="resetGame()" value="I know what I'm doing..." class="clearOptions">
+            <label class="clearOptions" id="clearOptionsLabel">Are you absolutely sure? There's no going back...</label>
+            <input type="button" onclick="resetGame()" value="I know what I'm doing..." class="clearOptions"
+                id="resetButton">
+            <input type="button" onclick="closeClearOptions()" value="Wait no, take me back" class="clearOptions"
+                id="dontResetButton">
         </div>
     </div>
 
 
-
-
-    <div class="event" id="eventOne">
-        <div class=eventOne>
-            <p>This is event 1</p>
-            <input type="button" class="close" value="I see" onclick="closeEvent('eventOne'), generateSave()">
-        </div>
+    <div class="event" id="intro">
+        <p>This world. This world is so confuzing.</p>
     </div>
+
 
 
 
