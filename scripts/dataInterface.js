@@ -2,6 +2,9 @@ function checkForSaves() {
     if (localStorage.getItem("localKey") !== null) {
         gameState = JSON.parse(localStorage.getItem("localKey"));
     }
+    else {
+        playIntro();
+    }
 }
 
 function saveGame() {
@@ -12,6 +15,9 @@ function resetGame() {
     clearLocalStorage();
     resetGameState()
     updateUi();
+    closeClearOptions();
+    closeEvent("options");
+    playIntro();
 }
 
 function clearLocalStorage() {
@@ -30,3 +36,5 @@ function resetGameState() {
 }
 
 var getDefaultGameState = () => JSON.parse(JSON.stringify(gameStateReset));
+
+var getCrabs = () => gameState.resources.crabs;

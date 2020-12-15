@@ -16,17 +16,35 @@ body {
      left: 0;
      top: 0;
      overflow: auto;
-     background-color: black;
      background-color: rgba(0, 0, 0, 0.4);
  }
 
  .eventOne{
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
      background-color: #55a7eb;
      margin: 20px auto;
      padding: 20px;
      border: 1px solid black;
      width: 80%;
+     text-align: center;
  }
+
+ .intro{
+    font-size: 20;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #55a7eb;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    width: 70%;
+    height: 90%;
+    object-fit: cover;
+}
+
 
  .close{
      color: green;
@@ -48,4 +66,5 @@ body {
 
 .clearOptions{
     display: none;
+    text-align: center;
 }

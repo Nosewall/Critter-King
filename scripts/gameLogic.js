@@ -2,6 +2,7 @@ function initGame() {
     setVolume();
     checkForSaves();
     updateUi();
+    checkIntro();
 }
 
 
@@ -15,6 +16,18 @@ function incrementCrab() {
 function openOptions() {
     var options = document.getElementById("options")
     options.style.display = "block";
+}
+
+function showClearOptions() {
+    getElement("clearOptionsLabel").style.display = "block";
+    getElement("resetButton").style.display = "block";
+    getElement("dontResetButton").style.display = "block";
+}
+
+function closeClearOptions() {
+    getElement("clearOptionsLabel").style.display = "none";
+    getElement("resetButton").style.display = "none";
+    getElement("dontResetButton").style.display = "none";
 }
 
 
@@ -34,4 +47,10 @@ function updateUi() {
 
 function getElement(id) {
     return document.getElementById(id);
+}
+
+function checkIntro() {
+    if (gameState.events.intro == false) {
+        playIntro();
+    }
 }
