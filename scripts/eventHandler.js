@@ -38,6 +38,10 @@ function intro5() {
 }
 
 function eventOne() {
-    getElement(eventOne).style.display = "block";
-    gameState.events.eventOnePlayed = true;
+    getElement("eventOne").style.display = "block";
+}
+
+function eventTwo() {
+    closeEvent("eventOne");
+    getElement("eventOne_2").style.display = "block";
 }
