@@ -8,8 +8,9 @@ function closeEvent(elementId) {
 }
 
 function checkForEvents() {
-    if (getCrabs() >= 25 && gameState.events.eventOnePlayed == false) {
+    if (getCrabs() >= 25 && gameState.events.event1Played == false) {
         eventOne();
+        setEventFlag("event1Played");
     }
 }
 

@@ -35,6 +35,10 @@ function resetGameState() {
     gameState = getDefaultGameState();
 }
 
+function setEventFlag(eventId) {
+    gameState.events[eventId] = true;
+}
+
 var getDefaultGameState = () => JSON.parse(JSON.stringify(gameStateReset));
 
 var getCrabs = () => gameState.resources.crabs;
