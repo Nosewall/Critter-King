@@ -8,9 +8,8 @@ function closeEvent(elementId) {
 }
 
 function checkForEvents() {
-    if (getCrabs() >= 25 && gameState.events.event1Played == false) {
+    if (getCrabs() >= 25 && gameState.events.eventOnePlayed == false) {
         eventOne();
-        setEventFlag("event1Played");
     }
 }
 
@@ -39,6 +38,10 @@ function intro5() {
 }
 
 function eventOne() {
-    getElement(eventOne).style.display = "block";
-    gameState.events.eventOnePlayed = true;
+    getElement("eventOne").style.display = "block";
+}
+
+function eventTwo() {
+    closeEvent("eventOne");
+    getElement("eventOne_2").style.display = "block";
 }

@@ -17,91 +17,24 @@
 
 <body onLoad="initGame()">
 
+    <!--All input and UI buttons -->
 
-    <button onclick="incrementCrab()">Collect a crab</button>
-    <label id="crabCount">0</label>
+    <button onclick="incrementCrab()" class="crabButton">Collect a crab</button>
+    <label id="crabCount" class="crabButton">0</label>
 
     <div class=optionsButton>
         <button onclick="openOptions()">Options</button>
     </div>
 
-    <div class="event" id="intro1">
-        <div class="intro">
-            <img src="images/Intro1.png">
-            <p>
-                You've worked so, so hard.
-                You were the top of your class in school. People have always envied your drive and willpower. They said
-                you were destined for great things. So why? Why do you still have this hole in your heart?
-                You're on a beach by your family home, where you grew up. You're spending a lot of time here lately.
-                Thinking about that hole inside you. Trying to problem solve your way to happiness. Nothing. It's all
-                just more weight. It's all just more work.
-                Today is different. You wont take responsibility again. You can't take any more responsibility. It's all
-                so heavy. Life is so heavy. You look up at the vast sky, and it's emptiness is reflected inside of you.
-                'Please, if there's anybody out there. Help me. I don't know how to fill this void'
-
-            </p>
-            <input type="button" onclick="intro2()" value=".....">
-        </div>
+    <div class="OrphanButton">
+        <input type="button" onClick="IncrementOrphans()" value="Recruit an Orphan">
+        <label id="orphanCount">0</label>
+        <label>Next orphan Cost: (</label>
+        <label id="orpahnCost">15</label>
+        <label>)</label>
     </div>
 
-    <div class="event" id="intro2">
-        <div class="intro">
-            <img src="images/Intro2.png">
-            <p>
-                'OW!'
-                You're jolted out of your daze by a sharp pain in your arm. it looks like sand crab crawled underneath
-                you while you were sky-gazing. Just what you needed.
-            </p>
-            <input type="button" onclick="intro3()" value="Swat the pest away and return to your brooding in peace">
-        </div>
-    </div>
-
-    <div class="event" id="intro3">
-        <div class="intro">
-            <img src="images/Intro4.png" alt="">
-            <p>
-                You move to flick the creature towards the ocean and get back to the problems of your heart. But... You
-                hesitate. He scuttles towards you again, and this time you don't flinch. Those elegant legs, the
-                perfect, purposeful shuffle. The light crackling of his crabdomen dragging against the tiny pieces of
-                crystalized sand.
-            </p>
-            <input type="button" onclick="intro4()" value="And then it happens">
-        </div>
-    </div>
-
-    <div class="event" id="intro4">
-        <div class="intro">
-            <img src="images/Intro5.png" alt="">
-            <p>
-                Those eyes... In those eyes, you see the reflection of the whole universe. You see your life, every
-                success, every heartbreak, every day that the bottomless black pit swalowed you deeper and deeper.
-                You're there now, falling and falling, the world a mere blip miles above you, endlessly drowning.
-                A claw.
-                A breath of fresh air.
-                Time begins again.
-
-            </p>
-            <input type="button" onclick="intro5()" value="...">
-        </div>
-    </div>
-
-    <div class="event" id="intro5">
-        <div class="intro">
-            <img src="images/Intro6.png" alt="">
-            <p>
-                The sun is shining. You feel it's warmth on your skin.
-                You feel. You feel more than you remembered you knew how to feel.
-                The crab scurries back towards the ocean.
-                Your eyes are dry. How long have you been crying?
-                ...
-                ..."Thank you....."
-
-
-            </p>
-            <input type="button" onclick="closeEvent('intro5')" value="You know what you must do...">
-        </div>
-    </div>
-
+    <!--Events and Options-->
 
     <div class="event" id="options">
         <div class="Options">
@@ -117,12 +50,110 @@
         </div>
     </div>
 
+    <div class="event" id="intro1">
+        <div class="intro">
+            <img src="images/Intro1.png">
 
-    <div class="event" id="intro">
-        <p>This world. This world is so confuzing.</p>
+            <p>You've worked so, so hard.</p>
+            <p>You were the top of your class in school. People have always envied your drive and willpower. They said
+                you were destined for great things. So why? Why do you still have this hole in your heart? </p>
+            <p>You're on a beach by your family home, where you grew up. You're spending a lot of time here lately.
+                Thinking about that hole inside you. Trying to problem solve your way to happiness. Nothing. It's all
+                just more weight.</p>
+            <p>It's all just more work.</p>
+            <p>Today is different. You wont take responsibility again. You can't take any more responsibility. It's all
+                so heavy. Life is so heavy. You look up at the vast sky, and it's emptiness is reflected inside of you.
+            </p>
+            <p>...</p>
+            <p>'Please, if there's anybody out there. Help me. I don't know how to fill this void'</p>
+
+
+            <input type="button" onclick="intro2()" value=".....">
+        </div>
+    </div>
+
+    <div class="event" id="intro2">
+        <div class="intro">
+            <img src="images/Intro2.png">
+            <p> 'OW!'</p>
+            <p> You're jolted out of your daze by a sharp pain in your arm. it looks like sand crab crawled underneath
+                you while you were sky-gazing. Just what you needed.</p>
+            <input type="button" onclick="intro3()" value="Swat the pest away and return to your brooding in peace">
+        </div>
+    </div>
+
+    <div class="event" id="intro3">
+        <div class="intro">
+            <img src="images/Intro4.png">
+
+            <p>You move to flick the creature towards the ocean and get back to the problems of your heart. But... You
+                hesitate. He scuttles towards you again, and this time you don't flinch. </p>
+            <p>Those elegant legs, the perfect, purposeful shuffle. The light crackling of his crabdomen dragging
+                against the tiny pieces of
+                crystalized sand.</p>
+
+            <input type="button" onclick="intro4()" value="And then it happens">
+        </div>
+    </div>
+
+    <div class="event" id="intro4">
+        <div class="intro">
+            <img src="images/Intro5.png">
+
+            <p>Those eyes... In those eyes, you see the reflection of the whole universe. </p>
+            <p>You see your life, every success, every heartbreak, every day that the bottomless black pit swalowed you
+                deeper and deeper.</p>
+            <p>You're there now, falling and falling, the world a mere blip miles above you, endlessly drowning.</p>
+            <p>A claw.</p>
+            <p>A breath of fresh air.</p>
+            <p>Time begins again.</p>
+
+
+            <input type="button" onclick="intro5()" value="...">
+        </div>
+    </div>
+
+    <div class="event" id="intro5">
+        <div class="intro">
+            <img src="images/Intro6.png" alt="">
+
+            <p>The sun is shining. You feel it's warmth on your skin.</p>
+            <p>You feel. You feel more than you remembered you knew how to feel.</p>
+            <p>The crab scurries back towards the ocean.</p>
+            <p>Your eyes are dry. How long have you been crying?</p>
+            <p>...</p>
+            <p>..."Thank you....."</p>
+
+
+
+            <input type="button" onclick="closeEvent('intro5')" value="You know what you must do...">
+        </div>
     </div>
 
 
+
+
+    <div class="event" id="eventOne">
+        <div class="eventOne">
+            <p>'Sir? Are you okay?</p>
+            <p>A young boy approaches you on the beach. His clothes are tattered, he smells like old milk, and he seems
+                to think it's okay to approach strangers on important crabbing business</p>
+            <input type="button" onclick="eventOne_2()"
+                value="'Boy, I don't have time for your games. Run along to your parents'">
+        </div>
+    </div>
+
+    <div class="event" id="eventOne_2">
+        <div class="eventOne_2">
+            <p>'B-but sir....I have no parents.'</p>
+            <p>Of course. You should have seen it earlier. Everything about this grimey boy screams 'orphan'. You drop
+                your latest crab into your crab bucket and look the boy up and down.</p>
+            <p>'Sir, w-why are you collecting all those crabs?'</p>
+            <p>Perhaps you and this boy can help each other...</p>
+            <input type="button" onclick="closeEvent(eventOne_2) && showOrphanButton()"
+                value="'Where do I even begin....'">
+        </div>
+    </div>
 
 
 

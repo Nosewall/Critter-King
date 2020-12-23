@@ -13,6 +13,10 @@ function incrementCrab() {
     saveGame();
 }
 
+function incrementOrphan() {
+
+}
+
 function openOptions() {
     var options = document.getElementById("options")
     options.style.display = "block";
@@ -30,14 +34,13 @@ function closeClearOptions() {
     getElement("dontResetButton").style.display = "none";
 }
 
+function showOrphanButton() {
+    getElement("OrphanButton").style.display = "block;"
+}
+
 
 function changeVolume(volumeToSet) {
     getElement("sound").volume = (volumeToSet / 10);
-}
-
-function eventOne() {
-    var eventOne = document.getElementById("eventOne")
-    eventOne.style.display = "block";
 }
 
 function updateUi() {
