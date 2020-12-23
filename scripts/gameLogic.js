@@ -13,29 +13,31 @@ function incrementCrab() {
     saveGame();
 }
 
+function calculateOrphanCost() {
+    let orphanCount = parseInt(getElement("orphanCost"));
+    let newCost = (orphanCount * orphanCount);
+    getElement("orphanCost") = newCost;
+    updateUi();
+}
+
 function incrementOrphan() {
 
 }
 
-function openOptions() {
-    var options = document.getElementById("options")
-    options.style.display = "block";
-}
-
 function showClearOptions() {
-    getElement("clearOptionsLabel").style.display = "block";
-    getElement("resetButton").style.display = "block";
-    getElement("dontResetButton").style.display = "block";
+    openElement("clearOptionsLabel");
+    openElement("resetButton");
+    openElement("dontResetButton");
 }
 
 function closeClearOptions() {
-    getElement("clearOptionsLabel").style.display = "none";
-    getElement("resetButton").style.display = "none";
-    getElement("dontResetButton").style.display = "none";
+    closeElement("clearOptionsLabel");
+    closeElement("resetButton");
+    closeElement("dontResetButton");
 }
 
 function showOrphanButton() {
-    getElement("OrphanButton").style.display = "block;"
+    openElement("OrphanButton");
 }
 
 
@@ -50,6 +52,14 @@ function updateUi() {
 
 function getElement(id) {
     return document.getElementById(id);
+}
+
+function closeElement(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+function openElement(id) {
+    document.getElementById(id).style.display = "block";
 }
 
 function checkIntro() {

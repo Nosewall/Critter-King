@@ -73,7 +73,7 @@ gameStateReset = {
         "orphans": 0,
     },
 
-    "system": { "volume": 100, },
+    "system": { "volume": 1, },
 
 
 

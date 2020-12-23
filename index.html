@@ -23,7 +23,7 @@
     <label id="crabCount" class="crabButton">0</label>
 
     <div class=optionsButton>
-        <button onclick="openOptions()">Options</button>
+        <button onclick="openElement('options')">Options</button>
     </div>
 
     <div class="OrphanButton">
@@ -41,7 +41,7 @@
             <label></label>
             <input type="range" id="volumeSlider" min="0" max="10" oninput="changeVolume(this.value)">
             <input type="button" onclick="showClearOptions()" value="Clear data and restart game">
-            <input type="button" onclick="closeEvent('options')" value="Close Options">
+            <input type="button" onclick="closeElement('options')" value="Close Options">
             <label class="clearOptions" id="clearOptionsLabel">Are you absolutely sure? There's no going back...</label>
             <input type="button" onclick="resetGame()" value="I know what I'm doing..." class="clearOptions"
                 id="resetButton">
@@ -126,7 +126,7 @@
 
 
 
-            <input type="button" onclick="closeEvent('intro5')" value="You know what you must do...">
+            <input type="button" onclick="closeElement('intro5')" value="You know what you must do...">
         </div>
     </div>
 
