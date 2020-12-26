@@ -3,7 +3,7 @@ function checkForSaves() {
         gameState = JSON.parse(localStorage.getItem("localKey"));
     }
     else {
-        playIntro();
+        resetGameState();
     }
 }
 
@@ -16,7 +16,7 @@ function resetGame() {
     resetGameState()
     updateUi();
     closeClearOptions();
-    closeEvent("options");
+    closeElement("options");
     playIntro();
 }
 
@@ -26,22 +26,21 @@ function clearLocalStorage() {
 }
 
 function setVolume() {
-    volume = gameState.system.volume;
+    let volume = gameState.system.volume;
 
     getElement("sound").volume = volume;
-}
-
-function resetGameState() {
-    gameState = getDefaultGameState();
+    getElement("volumeIndicator").innerHTML = (volume * 100)
+    getElement("volumeSlider").value = (volume * 100);
 }
 
 function setEventFlag(eventId) {
     gameState.events[eventId] = true;
 }
 
-var getDefaultGameState = () => JSON.parse(JSON.stringify(gameStateReset));
+function setCrabs(crabCount) {
+    gameState.resources.crabs = crabCount;
+}
 
 var getCrabs = () => gameState.resources.crabs;
 
-
-ft
+var getOrphans = () => gameState.resources.orphans;

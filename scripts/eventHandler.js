@@ -1,5 +1,6 @@
 function playIntro() {
     openElement("intro1");
+    setEventFlag("intro");
 }
 
 function intro2() {

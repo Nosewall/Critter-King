@@ -6,8 +6,8 @@
     </meta>
     <link rel="stylesheet" href="styles/style.css" defer>
     </link>
-    <script src="scripts/saveData.js" defer></script>
     <script src="scripts/dataInterface.js" defer></script>
+    <script src="scripts/saveData.js" defer></script>
     <script src="scripts/eventHandler.js" defer></script>
     <script src="scripts/gameLogic.js" defer></script>
     <audio src="sounds/beachSound.wav" style="display:none;" autoplay="autoplay" loop controls="false" id="sound"
@@ -27,10 +27,10 @@
     </div>
 
     <div class="OrphanButton">
-        <input type="button" onClick="IncrementOrphans()" value="Recruit an Orphan">
+        <input type="button" onclick="incrementOrphan()" value="Recruit an Orphan">
         <label id="orphanCount">0</label>
         <label>Next orphan Cost: (</label>
-        <label id="orpahnCost">15</label>
+        <label id="orphanCost">15</label>
         <label>)</label>
     </div>
 
@@ -38,8 +38,8 @@
 
     <div class="event" id="options">
         <div class="Options">
-            <label></label>
-            <input type="range" id="volumeSlider" min="0" max="10" oninput="changeVolume(this.value)">
+            <label>Current volume : <label id="volumeIndicator">50</label></label>
+            <input type="range" id="volumeSlider" min="0" max="100" oninput="changeVolume(this.value)">
             <input type="button" onclick="showClearOptions()" value="Clear data and restart game">
             <input type="button" onclick="closeElement('options')" value="Close Options">
             <label class="clearOptions" id="clearOptionsLabel">Are you absolutely sure? There's no going back...</label>
