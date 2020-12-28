@@ -15,6 +15,8 @@ function resetGame() {
     clearLocalStorage();
     resetGameState()
     updateUi();
+    refreshOrphanInterval();
+    calculateOrphanCost();
     closeClearOptions();
     closeElement("options");
     playIntro();

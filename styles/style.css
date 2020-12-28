@@ -32,7 +32,7 @@ body {
      text-align: center;
  }
 
- .intro{
+.basicEvent{
     font-size: 20;
     display: flex;
     justify-content: center;
@@ -74,6 +74,6 @@ body {
     text-align: center;
 }
 
-orphanButton{
+.orphanButton{
     display: none;
 }

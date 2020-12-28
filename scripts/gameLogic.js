@@ -1,11 +1,19 @@
+let orphanInterval = null;
+
 function initGame() {
     checkForSaves();
     setVolume();
-    calculateOrphanCost()
+    calculateOrphanCost();
+    refreshOrphanInterval();
     updateUi();
     checkIntro();
 }
 
+function orphanCollectACrab() {
+    gameState.resources.crabs++;
+    updateUi();
+    checkForEvents();
+}
 
 function incrementCrab() {
     gameState.resources.crabs++;
@@ -25,6 +33,7 @@ function incrementOrphan() {
         setCrabs(getCrabs() - parseInt(getElement("orphanCost").innerHTML));
         gameState.resources.orphans++;
         calculateOrphanCost();
+        refreshOrphanInterval();
         updateUi();
     }
 }
@@ -42,7 +51,7 @@ function closeClearOptions() {
 }
 
 function showOrphanButton() {
-    openElement("OrphanButton");
+    openElement("orphanButton");
 }
 
 
@@ -69,6 +78,7 @@ function closeElement(id) {
 
 function openElement(id) {
     document.getElementById(id).style.display = "block";
+    eventIsOpen = true;
 }
 
 function checkIntro() {
@@ -77,4 +87,21 @@ function checkIntro() {
     }
 }
 
-setInterval(incrementCrab, (1000 / getOrphans()));
+function refreshOrphanInterval() {
+    if (orphanInterval) {
+        stopOrphanCollection();
+    }
+    if (getOrphans() > 0) {
+        orphanInterval = setInterval(orphanCollectACrab, 1000 / getOrphans());
+    }
+    if (eventIsOpen) {
+        stopOrphanCollection();
+    }
+}
+
+
+
+function stopOrphanCollection() {
+    clearInterval(orphanInterval);
+    orphanInterval = null;
+}

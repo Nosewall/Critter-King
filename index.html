@@ -23,10 +23,10 @@
     <label id="crabCount" class="crabButton">0</label>
 
     <div class=optionsButton>
-        <button onclick="openElement('options')">Options</button>
+        <button onclick="openOptions()">Options</button>
     </div>
 
-    <div class="OrphanButton">
+    <div class="orphanButton" id="orphanButton">
         <input type="button" onclick="incrementOrphan()" value="Recruit an Orphan">
         <label id="orphanCount">0</label>
         <label>Next orphan Cost: (</label>
@@ -41,7 +41,7 @@
             <label>Current volume : <label id="volumeIndicator">50</label></label>
             <input type="range" id="volumeSlider" min="0" max="100" oninput="changeVolume(this.value)">
             <input type="button" onclick="showClearOptions()" value="Clear data and restart game">
-            <input type="button" onclick="closeElement('options')" value="Close Options">
+            <input type="button" onclick="closeOptions()" value="Close Options">
             <label class="clearOptions" id="clearOptionsLabel">Are you absolutely sure? There's no going back...</label>
             <input type="button" onclick="resetGame()" value="I know what I'm doing..." class="clearOptions"
                 id="resetButton">
@@ -123,9 +123,6 @@
             <p>Your eyes are dry. How long have you been crying?</p>
             <p>...</p>
             <p>..."Thank you....."</p>
-
-
-
             <input type="button" onclick="closeElement('intro5')" value="You know what you must do...">
         </div>
     </div>
@@ -144,14 +141,13 @@
     </div>
 
     <div class="event" id="eventOne_2">
-        <div class="eventOne_2">
+        <div class="eventOne">
             <p>'B-but sir....I have no parents.'</p>
             <p>Of course. You should have seen it earlier. Everything about this grimey boy screams 'orphan'. You drop
                 your latest crab into your crab bucket and look the boy up and down.</p>
             <p>'Sir, w-why are you collecting all those crabs?'</p>
             <p>Perhaps you and this boy can help each other...</p>
-            <input type="button" onclick="closeEvent(eventOne_2) && showOrphanButton()"
-                value="'Where do I even begin....'">
+            <input type="button" onclick="eventOne_3()" value="'Where do I even begin....'">
         </div>
     </div>
 
