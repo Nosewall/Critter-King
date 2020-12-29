@@ -2,7 +2,7 @@ var eventIsOpen = false;
 
 function openOptions() {
     openElement("options");
-    eventIsOpen;
+    eventIsOpen = true;
     refreshOrphanInterval();
 }
 
@@ -41,6 +41,7 @@ function intro5() {
 
 function eventOne() {
     eventIsOpen = true;
+    refreshOrphanInterval();
     openElement("eventOne");
 }
 function eventOne_2() {
@@ -51,13 +52,41 @@ function eventOne_2() {
 function eventOne_3() {
     closeElement("eventOne_2");
     showOrphanButton();
-    gameState.events.event1Played = true;
+    setEventFlag("event1Played");
     eventIsOpen = false;
+    refreshOrphanInterval();
+}
+
+function eventTwo() {
+    eventIsOpen = true;
+    refreshOrphanInterval();
+    openElement("eventTwo");
+}
+
+function eventTwo_2() {
+    closeElement("eventTwo");
+    openElement("eventTwo_2");
+}
+
+function eventTwo_3() {
+    closeElement("eventTwo_2");
+    openElement("eventTwo_3");
+}
+
+function eventTwo_4() {
+    closeElement("eventTwo_3");
+    eventIsOpen = false;
+    setEventFlag("event2Played");
+    refreshOrphanInterval();
 }
 
 function checkForEvents() {
     if (getCrabs() >= 25 && gameState.events.event1Played == false) {
         eventOne();
+    }
+
+    if (getCrabs() >= 200 && gameState.events.event2Played == false) {
+        eventTwo();
     }
 }
 

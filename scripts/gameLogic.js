@@ -54,6 +54,10 @@ function showOrphanButton() {
     openElement("orphanButton");
 }
 
+function closeOrphanButton() {
+    closeElement("orphanButton");
+}
+
 
 function changeVolume(volumeToSet) {
     getElement("sound").volume = (volumeToSet / 100);
@@ -64,6 +68,9 @@ function changeVolume(volumeToSet) {
 function updateUi() {
     getElement("crabCount").innerHTML = gameState.resources.crabs;
     getElement("orphanCount").innerHTML = gameState.resources.orphans;
+    if (gameState.events.event1Played) {
+        showOrphanButton();
+    }
 
 }
 
@@ -78,7 +85,6 @@ function closeElement(id) {
 
 function openElement(id) {
     document.getElementById(id).style.display = "block";
-    eventIsOpen = true;
 }
 
 function checkIntro() {

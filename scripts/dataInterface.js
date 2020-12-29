@@ -18,6 +18,7 @@ function resetGame() {
     refreshOrphanInterval();
     calculateOrphanCost();
     closeClearOptions();
+    closeOrphanButton();
     closeElement("options");
     playIntro();
 }
