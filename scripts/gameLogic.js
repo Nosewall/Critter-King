@@ -93,6 +93,7 @@ function checkIntro() {
     }
 }
 
+
 function refreshOrphanInterval() {
     if (orphanInterval) {
         stopOrphanCollection();

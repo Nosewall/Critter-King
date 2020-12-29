@@ -67,6 +67,7 @@ gameStateReset = {
 
 }
 
+
 checkForSaves();
 
 var getDefaultGameState = () => JSON.parse(JSON.stringify(gameStateReset));

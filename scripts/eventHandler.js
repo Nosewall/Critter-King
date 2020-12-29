@@ -80,6 +80,7 @@ function eventTwo_4() {
     refreshOrphanInterval();
 }
 
+
 function checkForEvents() {
     if (getCrabs() >= 25 && gameState.events.event1Played == false) {
         eventOne();
