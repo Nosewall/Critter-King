@@ -48,3 +48,5 @@ function setCrabs(crabCount) {
 var getCrabs = () => gameState.resources.crabs;
 
 var getOrphans = () => gameState.resources.orphans;
+
+var getOrphanages = () => gameState.resources.orphanages;

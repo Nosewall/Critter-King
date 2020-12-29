@@ -80,6 +80,59 @@ function eventTwo_4() {
     refreshOrphanInterval();
 }
 
+function eventThree() {
+    eventIsOpen = true;
+    refreshOrphanInterval();
+    openElement("eventThree");
+}
+
+function eventThree_2() {
+    closeElement("eventThree");
+    openElement("eventThree_2");
+}
+
+function eventThree_3() {
+    closeElement("eventThree_2");
+    openElement("eventThree_3");
+}
+
+function eventThree_4() {
+    closeElement("eventThree_3");
+    gameState.events.event3Played = true;
+    eventIsOpen = false;
+    refreshOrphanInterval();
+}
+
+function eventFour() {
+    eventIsOpen = true;
+    refreshOrphanInterval();
+    openElement("eventFour");
+}
+
+function eventFour_2() {
+    closeElement("eventFour");
+    openElement("eventFour_2");
+}
+
+function eventFour_3() {
+    closeElement("eventFour_2");
+    openElement("eventFour_3");
+}
+
+function eventFour_4() {
+    closeElement("eventFour_3");
+    openElement("eventFour_4");
+}
+
+function eventFour_5() {
+    closeElement("eventFour_4");
+    gameState.events.event4Played = true;
+    eventIsOpen = false;
+    refreshOrphanInterval();
+    showOrphanageButton();
+
+}
+
 
 function checkForEvents() {
     if (getCrabs() >= 25 && gameState.events.event1Played == false) {
@@ -88,6 +141,10 @@ function checkForEvents() {
 
     if (getCrabs() >= 200 && gameState.events.event2Played == false) {
         eventTwo();
+    }
+
+    if (getCrabs() >= 350 && gameState.events.event3Played == false) {
+        eventThree();
     }
 }
 

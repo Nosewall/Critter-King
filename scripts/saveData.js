@@ -2,6 +2,7 @@ gameStateReset = {
     "resources": {
         "crabs": 0,
         "orphans": 0,
+        "orphanages": 0,
     },
 
     "system": { "volume": 1, },

@@ -1,4 +1,5 @@
 let orphanInterval = null;
+let orphanageInterval = null;
 
 function initGame() {
     checkForSaves();
@@ -24,8 +25,13 @@ function incrementCrab() {
 
 function calculateOrphanCost() {
     let orphanCount = parseInt(getElement("orphanCost").innerHTML);
-    let newCost = (getOrphans() * 30);
+    let newCost = (getOrphans() * 1.5 * 10);
     getElement("orphanCost").innerHTML = newCost;
+}
+
+function calculateOrphanageCost() {
+    let orphanageCount = parseInt(getElement("orphanageCost").innerHTML);
+    let newCost = (getOrphanages() * 1.5 * 224)
 }
 
 function incrementOrphan() {
@@ -36,6 +42,18 @@ function incrementOrphan() {
         refreshOrphanInterval();
         updateUi();
     }
+    saveGame();
+}
+
+function incrementOrphanage() {
+    if (getCrabs() >= parseInt(getElement("orphanageCost").innerHTML)) {
+        setCrabs(getCrabs() - parseInt(getElement("orphanageCost").innerHTML));
+        gameState.resources.orphanage++;
+        calculateOrphanageCost();
+        refreshOrphanInterval();
+        updateUi();
+    }
+    saveGame();
 }
 
 function showClearOptions() {
@@ -58,6 +76,14 @@ function closeOrphanButton() {
     closeElement("orphanButton");
 }
 
+function showOrphanageButton() {
+    openElement("orphanageButton");
+
+}
+
+function closeOrphanageButton() {
+    closeElement("orphanageButton");
+}
 
 function changeVolume(volumeToSet) {
     getElement("sound").volume = (volumeToSet / 100);
