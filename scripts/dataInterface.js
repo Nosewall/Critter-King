@@ -19,6 +19,7 @@ function resetGame() {
     calculateOrphanCost();
     closeClearOptions();
     closeOrphanButton();
+    closeOrphanageButton();
     closeElement("options");
     playIntro();
 }

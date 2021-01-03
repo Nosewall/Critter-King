@@ -5,13 +5,21 @@ function initGame() {
     checkForSaves();
     setVolume();
     calculateOrphanCost();
+    calculateOrphanageCost();
     refreshOrphanInterval();
     updateUi();
+    checkUiOptions();
     checkIntro();
 }
 
 function orphanCollectACrab() {
     gameState.resources.crabs++;
+    updateUi();
+    checkForEvents();
+}
+
+function orphanageCollection() {
+    gameState.resources.crabs = gameState.resources.crabs + 35;
     updateUi();
     checkForEvents();
 }
@@ -32,6 +40,7 @@ function calculateOrphanCost() {
 function calculateOrphanageCost() {
     let orphanageCount = parseInt(getElement("orphanageCost").innerHTML);
     let newCost = (getOrphanages() * 1.5 * 224)
+    getElement("orphanageCost").innerHTML = newCost;
 }
 
 function incrementOrphan() {
@@ -48,7 +57,7 @@ function incrementOrphan() {
 function incrementOrphanage() {
     if (getCrabs() >= parseInt(getElement("orphanageCost").innerHTML)) {
         setCrabs(getCrabs() - parseInt(getElement("orphanageCost").innerHTML));
-        gameState.resources.orphanage++;
+        gameState.resources.orphanages++;
         calculateOrphanageCost();
         refreshOrphanInterval();
         updateUi();
@@ -94,10 +103,16 @@ function changeVolume(volumeToSet) {
 function updateUi() {
     getElement("crabCount").innerHTML = gameState.resources.crabs;
     getElement("orphanCount").innerHTML = gameState.resources.orphans;
+    getElement("orphanageCount").innerHTML = gameState.resources.orphanages;
+}
+
+function checkUiOptions() {
     if (gameState.events.event1Played) {
         showOrphanButton();
     }
-
+    if (gameState.events.event4Played) {
+        showOrphanageButton();
+    }
 }
 
 function getElement(id) {
@@ -124,12 +139,20 @@ function refreshOrphanInterval() {
     if (orphanInterval) {
         stopOrphanCollection();
     }
+    if (orphanageInterval) {
+        stopOrphanageCollection();
+    }
     if (getOrphans() > 0) {
         orphanInterval = setInterval(orphanCollectACrab, 1000 / getOrphans());
     }
+    if (getOrphanages() > 0) {
+        orphanageInterval = setInterval(orphanageCollection, 1000 / getOrphanages());
+    }
     if (eventIsOpen) {
         stopOrphanCollection();
+        stopOrphanageCollection();
     }
+
 }
 
 
@@ -137,4 +160,9 @@ function refreshOrphanInterval() {
 function stopOrphanCollection() {
     clearInterval(orphanInterval);
     orphanInterval = null;
+}
+
+function stopOrphanageCollection() {
+    clearInterval(orphanageInterval);
+    orphanageInterval = null;
 }

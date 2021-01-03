@@ -146,5 +146,9 @@ function checkForEvents() {
     if (getCrabs() >= 350 && gameState.events.event3Played == false) {
         eventThree();
     }
+
+    if (getOrphans() >= 10 && gameState.events.event4Played == false) {
+        eventFour();
+    }
 }
 
