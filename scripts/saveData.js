@@ -1,4 +1,4 @@
-gameStateReset = {
+let gameStateReset = {
     "resources": {
         "crabs": 0,
         "orphans": 0,
@@ -68,12 +68,11 @@ gameStateReset = {
 
 }
 
-
-checkForSaves();
-
-var getDefaultGameState = () => JSON.parse(JSON.stringify(gameStateReset));
+let getDefaultGameState = () => JSON.parse(JSON.stringify(gameStateReset));
 
 function resetGameState() {
     gameState = getDefaultGameState();
 }
+
+checkForSaves();
 
